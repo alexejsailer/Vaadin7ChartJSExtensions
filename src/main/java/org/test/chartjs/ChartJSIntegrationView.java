@@ -16,6 +16,7 @@
 package org.test.chartjs;
 
 import com.vaadin.ui.Panel;
+import com.vaadin.ui.VerticalLayout;
 
 @SuppressWarnings("serial")
 public class ChartJSIntegrationView extends Panel {
@@ -23,10 +24,13 @@ public class ChartJSIntegrationView extends Panel {
 	private ChartJSExtension chartJSExtension;
 
 	public ChartJSIntegrationView() {
-
-		this.setId("myPanel");
-//		setWidth("500px");
-//		setHeight("500px");
+		this.setSizeUndefined();
+		VerticalLayout vl = new VerticalLayout();
+		vl.setSizeUndefined();
+//		vl.setWidth("500px");
+//		vl.setHeight("500px");
+		this.setContent(vl);
+		vl.setId("myPanel");
 		chartJSExtension = new ChartJSExtension();
 		chartJSExtension.extend(this);
 
