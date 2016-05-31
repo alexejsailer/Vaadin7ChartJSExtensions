@@ -11,6 +11,7 @@ import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
@@ -31,29 +32,28 @@ public class MyUI extends UI {
 
 	@Override
 	protected void init(VaadinRequest vaadinRequest) {
-		final VerticalLayout layout = new VerticalLayout();
+		final VerticalLayout vl = new VerticalLayout();
+		final HorizontalLayout hl = new HorizontalLayout();
 
-		ChartJSIntegrationView test = new ChartJSIntegrationView();
-
-		final TextField name = new TextField();
-		name.setCaption("Type your name here:");
-
-		Button button = new Button("Click Me");
-		button.addClickListener(new Button.ClickListener() {
+		ChartJSIntegrationView chartPanel = new ChartJSIntegrationView();
+		
+		Button addData = new Button("Add Data");
+		addData.addClickListener(new Button.ClickListener() {
 			private static final long serialVersionUID = 1L;
 
 			@Override
 			public void buttonClick(ClickEvent event) {
-				test.getChartJSExtension().addData();
+				chartPanel.getChartJSExtension().addData();
 			}
 
 		});
+		
+		hl.addComponents(addData);
+		vl.addComponents(hl, chartPanel);
+		vl.setMargin(true);
+		vl.setSpacing(true);
 
-		layout.addComponents(name, button, test);
-		layout.setMargin(true);
-		layout.setSpacing(true);
-
-		setContent(layout);
+		setContent(vl);
 	}
 
 	@WebServlet(value = { "/myui/*", "/VAADIN/*" }, asyncSupported = true)

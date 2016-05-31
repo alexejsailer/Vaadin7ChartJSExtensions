@@ -28,6 +28,11 @@ public class ChartJSExtension extends AbstractJavaScriptExtension {
 		callFunction("addData", commandAndArguments);
 	}
 	
+	public void changeDataSet(Object... commandAndArguments) {
+
+		callFunction("changeDataSet", commandAndArguments);
+	}
+	
 	@Override
 	protected Class<? extends ClientConnector> getSupportedParentType() {
 
