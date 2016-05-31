@@ -37,17 +37,6 @@ public class MyUI extends UI {
 
 		ChartJSIntegrationView chartPanel = new ChartJSIntegrationView();
 		
-		Button changeDataset = new Button("Change Dataset");
-		changeDataset.addClickListener(new Button.ClickListener() {
-			private static final long serialVersionUID = 1L;
-
-			@Override
-			public void buttonClick(ClickEvent event) {
-				chartPanel.getChartJSExtension().changeDataSet();
-			}
-
-		});
-		
 		Button addData = new Button("Add Data");
 		addData.addClickListener(new Button.ClickListener() {
 			private static final long serialVersionUID = 1L;
@@ -59,7 +48,7 @@ public class MyUI extends UI {
 
 		});
 		
-		hl.addComponents(changeDataset, addData);
+		hl.addComponents(addData);
 		vl.addComponents(hl, chartPanel);
 		vl.setMargin(true);
 		vl.setSpacing(true);

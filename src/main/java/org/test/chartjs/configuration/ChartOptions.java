@@ -6,7 +6,21 @@ public class ChartOptions {
 	private Boolean stacked = null;
 	private ChartHover hover = null;
 	private Boolean responsive = null;
-	private ChartData title = null;
+	private ChartTitle title = null;
+	private ChartTooltips tooltips = null;
+	private ChartScales scales = null;
+	
+	public ChartOptions() {
+		initDefaultValues();
+	}
+	
+	public void initDefaultValues() {
+		responsive = true;
+		title = new ChartTitle();
+		tooltips = new ChartTooltips();
+		hover = new ChartHover();
+		scales = new ChartScales();
+	}
 
 	public Boolean getShowLines() {
 		return showLines;
@@ -40,12 +54,28 @@ public class ChartOptions {
 		this.responsive = responsive;
 	}
 
-	public ChartData getTitle() {
+	public ChartTitle getTitle() {
 		return title;
 	}
 
-	public void setTitle(ChartData title) {
+	public void setTitle(ChartTitle title) {
 		this.title = title;
 	}
 
+	public ChartTooltips getTooltips() {
+		return tooltips;
+	}
+
+	public void setTooltips(ChartTooltips tooltips) {
+		this.tooltips = tooltips;
+	}
+
+	public ChartScales getScales() {
+		return scales;
+	}
+
+	public void setScales(ChartScales scales) {
+		this.scales = scales;
+	}
+	
 }

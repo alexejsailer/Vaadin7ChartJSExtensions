@@ -3,6 +3,7 @@ package org.test.chartjs;
 import org.test.chartjs.configuration.ChartConfiguration;
 import org.test.chartjs.configuration.ChartData;
 import org.test.chartjs.configuration.ChartDataset;
+import org.test.chartjs.configuration.ChartOptions;
 
 import com.vaadin.shared.JavaScriptExtensionState;
 
@@ -43,6 +44,11 @@ public class ChartJSState extends JavaScriptExtensionState {
 
 		configuration.setType("bar");
 		configuration.setData(data);
+		
+		ChartOptions options = new ChartOptions();
+		configuration.setOptions(options);
+		
+		
 	}
 	
 	public String[] getAxisLabels() {

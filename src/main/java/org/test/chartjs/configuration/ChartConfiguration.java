@@ -4,8 +4,9 @@ public class ChartConfiguration {
 
 	private String type = null;
 	private ChartData data = null;
-	
+	private ChartOptions options = null;
 
+	
 	public String getType() {
 		return type;
 	}
@@ -22,4 +23,12 @@ public class ChartConfiguration {
 		this.data = data;
 	}
 
+	public ChartOptions getOptions() {
+		return options;
+	}
+
+	public void setOptions(ChartOptions options) {
+		this.options = options;
+	}
+	
 }

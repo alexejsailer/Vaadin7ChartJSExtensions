@@ -4,6 +4,14 @@ public class ChartHover {
 
 	private String mode = null;
 
+	public ChartHover() {
+		initDefaultValues();
+	}
+	
+	public void initDefaultValues() {
+		mode = "dataset";
+	}
+	
 	public String getMode() {
 		return mode;
 	}
