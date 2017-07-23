@@ -1,0 +1,3 @@
+/src/main/webapp/* linguist-vendored
+/src/main/java/org/test/chartjs/* linguist-vendored
+*.java linguist-vendored=false
